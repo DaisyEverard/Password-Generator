@@ -151,9 +151,10 @@ function getRandom(arr) {
 function generatePassword() {
   let password = ""; 
   let optionsArray = getPasswordOptions(); 
-  for (i = 0; i < lengthCheck() - optionsArray.length; i++) {
-    password += getRandom(optionsArray); 
-  } 
+  if (optionsArray) { /*catch if no types selected*/
+    for (i = 0; i < lengthCheck() - optionsArray.length; i++) {
+      password += getRandom(optionsArray); 
+    } 
   //makes sure at least 1 of each type of character is in password at random index
   if(lengthCheck()) {
   for (i = 0; i < optionsArray.length; i++) { 
@@ -166,6 +167,7 @@ function generatePassword() {
   }
 } else {
   password = "Please enter a valid password length"
+}
 }
 return password
 }
