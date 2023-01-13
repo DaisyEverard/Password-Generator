@@ -59,6 +59,19 @@ header {
   min-height: 100px;
 }
 
+.card-body input {
+  margin-right: 25px; 
+}
+
+.input-group {
+  margin: 20px auto;
+}
+
+.warning {
+  color: red;
+  font-size: 0.7em;
+}
+
 .card-footer {
   text-align: center;
 }

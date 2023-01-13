@@ -89,11 +89,33 @@ var upperCasedCharacters = [
 ];
 
 /*
-specialCharacters, numericCharacters lowerCasedCharacters, upperCasedCharacters
+ type="text" id="userInput" />
+type="submit" onclick="othername();" />
+
+
+function othername() {
+    var input = document.getElementById("userInput").value;
+    alert(input);
+}
 */
 
+//check length wanted
+let lengthCheck = () => {
+   let length = document.getElementById("lengthInput").value; 
+   if (length < 10) {
+   document.getElementById("lengthWarning").textContent += "Min Length: 10 characters";
+   } else if (length > 64) {
+    document.getElementById("lengthWarning").textContent += "Max Length: 64 characters";
+   } else {
+    return length; 
+   }
+}
+
+lengthCheck(); 
 // Function to prompt user for password options
-let lengthRequired = 0;
+let lengthRequired = document.getElementById("lengthInput").value;
+console.log(lengthRequired); 
+
 let longArr = []; 
 function getPasswordOptions() {
    lengthRequired = prompt("How many characters would you like in your password?")

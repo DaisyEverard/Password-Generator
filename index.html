@@ -21,11 +21,12 @@
         <div class="card-body">
           <form id="form" onsubmit="return false;">
             <div class="input-group">
-              <p>How many characters would you like in your password?</p>
+              <p class="question">How many characters would you like in your password?</p>
               <input type="text" id="lengthInput"/>
+              <p id="lengthWarning" class="warning"></p>
             </div>
             <div class="input-group">
-              <p>Please select which kind of characters to use:</p>
+              <p class="question">Please select which kind of characters to use:</p>
               <div class="flex-row">
                 <p>Lower Case</p>
               <input type="checkbox" id="lowerInput"/>
