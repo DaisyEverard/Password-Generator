@@ -13,11 +13,31 @@
       <header>
         <h1>Password Generator</h1>
       </header>
+
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
         <div class="card-body">
+          <form id="form" onsubmit="return false;">
+            <div class="input-group">
+              <p>How many characters would you like in your password?</p>
+              <input type="text" id="lengthInput"/>
+            </div>
+            <div class="input-group">
+              <p>Please select which kind of characters to use:</p>
+              <div class="flex-row">
+                <p>Lower Case</p>
+              <input type="checkbox" id="lowerInput"/>
+              <p>Upper Case</p>
+              <input type="checkbox" id="upperInput"/>
+              <p>Numbers</p>
+              <input type="checkbox" id="numberInput"/>
+              <p>Special (@, %, +...)</p>
+              <input type="checkbox" id="specialInput"/>
+              </div>
+            </div>
+          </form>
           <textarea
             readonly
             id="password"

@@ -12,6 +12,11 @@ body,
   padding: 0;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
