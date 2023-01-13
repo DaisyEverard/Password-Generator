@@ -123,16 +123,16 @@ function getPasswordOptions() {
     document.getElementById("input-warning").textContent = "";
     let newArr = []
    if (document.getElementById("lower-input").checked) {
-    newArr.push(...lowerCasedCharacters); 
+    newArr.push(lowerCasedCharacters); 
    }; 
    if (document.getElementById("upper-input").checked) {
-    newArr.push(...upperCasedCharacters); 
+    newArr.push(upperCasedCharacters); 
    };
    if (document.getElementById("number-input").checked) {
-    newArr.push(...numericCharacters);
+    newArr.push(numericCharacters);
    }; 
    if (document.getElementById("special-input").checked) {
-    newArr.push(...specialCharacters)
+    newArr.push(specialCharacters)
    }
  return newArr; 
   }
@@ -141,16 +141,26 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
    let i = Math.floor(Math.random() * arr.length); 
-   return arr[i];
+   let j = Math.floor(Math.random() * arr[i].length)
+   return arr[i][j];
 }
 
 // Function to generate password with user input
 function generatePassword() {
   let password = ""; 
   let optionsArray = getPasswordOptions(); 
-  for (i = 0; i < lengthCheck(); i++) {
+  for (i = 0; i < lengthCheck() - optionsArray.length; i++) {
     password += getRandom(optionsArray); 
   } 
+  //makes sure at least 1 of each type of character is in password at random index
+  for (i = 0; i < optionsArray.length; i++) { 
+    const passwordIndex = Math.floor(Math.random() * password.length);
+    const passEnd = password.slice(passwordIndex);  
+    let passStart = password.slice(0, passwordIndex);
+    const add = optionsArray[i][(Math.floor(Math.random() * optionsArray[i].length))];
+    passStart += add; 
+    password = passStart + passEnd; 
+  }
   return password
 }
 
