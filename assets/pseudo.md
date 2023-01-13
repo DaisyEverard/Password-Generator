@@ -9,5 +9,4 @@ or array for `typesSelected`
 3. make array `allChars` of all characters from selected types. 
 concatenator function? 
 
-
- and randomly select from `allChars` and add to new string for password until `lengthRequired` reached
+4. randomly select from `allChars` and add to new string for password until `lengthRequired` reached

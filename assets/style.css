@@ -63,6 +63,10 @@ header {
   margin-right: 25px; 
 }
 
+.question {
+  font-weight: bold;
+}
+
 .input-group {
   margin: 20px auto;
 }
