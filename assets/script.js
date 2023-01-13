@@ -106,11 +106,11 @@ let lengthCheck = () => {
    document.getElementById("length-warning").textContent = "Min Length: 10 characters";
    } else if (length > 64) {
     document.getElementById("length-warning").textContent = "Max Length: 64 characters";
-   } else if (length !== /10-64/) {
-    document.getElementById("length-warning").textContent = "You must enter a number in digit form";
-   } else {
+   } else if (length >= 10) {
     document.getElementById("length-warning").textContent = ""; 
-    return length; 
+    return length;    
+   } else {
+    document.getElementById("length-warning").textContent = "You must enter a number in digit form";
    }
 }
 
