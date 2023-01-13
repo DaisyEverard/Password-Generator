@@ -106,6 +106,8 @@ let lengthCheck = () => {
    document.getElementById("length-warning").textContent = "Min Length: 10 characters";
    } else if (length > 64) {
     document.getElementById("length-warning").textContent = "Max Length: 64 characters";
+   } else if (length !== /10-64/) {
+    document.getElementById("length-warning").textContent = "You must enter a number in digit form";
    } else {
     document.getElementById("length-warning").textContent = ""; 
     return length; 
@@ -153,6 +155,7 @@ function generatePassword() {
     password += getRandom(optionsArray); 
   } 
   //makes sure at least 1 of each type of character is in password at random index
+  if(lengthCheck()) {
   for (i = 0; i < optionsArray.length; i++) { 
     const passwordIndex = Math.floor(Math.random() * password.length);
     const passEnd = password.slice(passwordIndex);  
@@ -161,7 +164,10 @@ function generatePassword() {
     passStart += add; 
     password = passStart + passEnd; 
   }
-  return password
+} else {
+  password = "Please select a valid password length"
+}
+return password
 }
 
 // Get references to the #generate element
