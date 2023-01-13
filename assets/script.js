@@ -101,40 +101,42 @@ function othername() {
 
 //check length wanted
 let lengthCheck = () => {
-   let length = document.getElementById("lengthInput").value; 
+   let length = document.getElementById("length-input").value; 
    if (length < 10) {
-   document.getElementById("lengthWarning").textContent += "Min Length: 10 characters";
+   document.getElementById("length-warning").textContent = "Min Length: 10 characters";
    } else if (length > 64) {
-    document.getElementById("lengthWarning").textContent += "Max Length: 64 characters";
+    document.getElementById("length-warning").textContent = "Max Length: 64 characters";
    } else {
+    document.getElementById("length-warning").textContent = ""; 
     return length; 
    }
 }
 
-lengthCheck(); 
-// Function to prompt user for password options
-let lengthRequired = document.getElementById("lengthInput").value;
-console.log(lengthRequired); 
-
-let longArr = []; 
+//function to get password options
 function getPasswordOptions() {
-   lengthRequired = prompt("How many characters would you like in your password?")
-   if (confirm("Would you like to use lower case characters?\n Your options are lower, upper, numeric, and special characters")) {
-    longArr.push(lowerCasedCharacters); 
+  if (document.getElementById("lower-input").checked +
+  document.getElementById("upper-input").checked +
+  document.getElementById("number-input").checked +
+  document.getElementById("special-input").checked < 1) {
+    document.getElementById("input-warning").textContent = "You must select at least one type";
+  } else {
+    document.getElementById("input-warning").textContent = "";
+    let newArr = []
+   if (document.getElementById("lower-input").checked) {
+    newArr.push(...lowerCasedCharacters); 
    }; 
-   if (confirm("Would you like to use upper case characters?")) {
-    longArr.push(upperCasedCharacters); 
+   if (document.getElementById("upper-input").checked) {
+    newArr.push(...upperCasedCharacters); 
    };
-   if (confirm("Would you like to use numbers?")) {
-    longArr.push(numericCharacters);
+   if (document.getElementById("number-input").checked) {
+    newArr.push(...numericCharacters);
    }; 
-   if (confirm("Would you like to use special characters (@, %, +...)?")) {
-    longArr.push(specialCharacters)
+   if (document.getElementById("special-input").checked) {
+    newArr.push(...specialCharacters)
    }
- console.log("LongArr: " + longArr); 
- console.log("lengthRequired: " + lengthRequired);
- return longArr; 
-}
+ return newArr; 
+  }
+  }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -144,11 +146,11 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  let password = ""
-  for (i = 0; i < lengthRequired; i++) {
-    password += getRandom(longArr)
+  let password = ""; 
+  let optionsArray = getPasswordOptions(); 
+  for (i = 0; i < lengthCheck(); i++) {
+    password += getRandom(optionsArray); 
   } 
-  console.log("Password: " + password)
   return password
 }
 

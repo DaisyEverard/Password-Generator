@@ -22,20 +22,29 @@
           <form id="form" onsubmit="return false;">
             <div class="input-group">
               <p class="question">How many characters would you like in your password?</p>
-              <input type="text" id="lengthInput"/>
-              <p id="lengthWarning" class="warning"></p>
+              <input type="text" id="length-input"/>
+              <p id="length-warning" class="warning"></p>
             </div>
             <div class="input-group">
               <p class="question">Please select which kind of characters to use:</p>
+              <p id="input-warning" class="warning"></p>
               <div class="flex-row">
-                <p>Lower Case</p>
-              <input type="checkbox" id="lowerInput"/>
-              <p>Upper Case</p>
-              <input type="checkbox" id="upperInput"/>
-              <p>Numbers</p>
-              <input type="checkbox" id="numberInput"/>
-              <p>Special (@, %, +...)</p>
-              <input type="checkbox" id="specialInput"/>
+                <label for="lower-input">
+                  Lower Case
+                  <input type="checkbox" id="lower-input" value="someValue"/> 
+                </label>                            
+              <label for="upperInput">
+                Upper Case
+                <input type="checkbox" id="upper-input" value="someValue"/>
+              </label>
+              <label for="numberInput">
+              Numbers
+              <input type="checkbox" id="number-input" value="someValue"/>
+            </label>
+            <label for="specialInput">
+              Special (@, %, +...)
+              <input type="checkbox" id="special-input" value="someValue"/>
+            </label>
               </div>
             </div>
           </form>
