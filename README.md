@@ -8,6 +8,7 @@ https://daisyeverard.github.io/Password-Generator/
 
 <p align="center">
   <img src="./assets/images/preview.png" width="500" alt="screenshot of site">
+  <img src="./assets/images/preview2.png" width="500" alt="screenshot with error message">
 </p>
 
 ## Description

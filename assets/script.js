@@ -165,7 +165,7 @@ function generatePassword() {
     password = passStart + passEnd; 
   }
 } else {
-  password = "Please select a valid password length"
+  password = "Please enter a valid password length"
 }
 return password
 }
