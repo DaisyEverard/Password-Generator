@@ -150,6 +150,14 @@ button[disabled] {
   #password {
     font-size: 1rem;
   }
+
+  .flex-row {
+    flex-direction: column;
+  }
+
+  .flex-row label {
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 500px) {

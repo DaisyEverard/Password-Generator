@@ -88,17 +88,6 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-/*
- type="text" id="userInput" />
-type="submit" onclick="othername();" />
-
-
-function othername() {
-    var input = document.getElementById("userInput").value;
-    alert(input);
-}
-*/
-
 //check length wanted
 let lengthCheck = () => {
    let length = document.getElementById("length-input").value; 
