@@ -1,4 +1,5 @@
 # Password-Generator
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Link to site
 
@@ -11,6 +12,14 @@ https://daisyeverard.github.io/Password-Generator/
   <img src="./assets/images/preview2.png" width="500" alt="screenshot with error message">
 </p>
 
+## Table of Contents
+
+- [Description](#description)
+- [Technologies](#technologies)
+- [Issues and Solutions](#issues-and-solutions)
+- [Probability Note](#probability-note)
+- [Contacts](#contacts)
+
 ## Description
 
 A simple tool to generate a random password that meets various criteria.
@@ -21,6 +30,12 @@ The user can choose how many characters to include and what kinds of characters 
 - If number not entered, error displays
 - Each selected character type will appear at least once in the password. 
 - The password is displayed in a text box once generated. 
+
+## Technologies
+
+- HTML
+- CSS
+- JavaScript
 
 ## Issues and solutions
 
@@ -33,9 +48,15 @@ The optionsArray containing all characters selected was changed by using push to
 ### still displaying added characters if no length added
 a new error message was introduced if invalid length input added. 
 
-## Probability note
+## Probability Note
 Due to the workaround to make every character appear at least once creating a nested array, and the fact the each subarray has a different number of items (10 digits, 26 for alphabets...)  it is less likely that a particular letter would be chosen than a particular number. The flip side of this argument is that it makes it more likely there will be an equal number of each character type selected.
 You could create an array with all possible characters not in nested arrays and choose from this for a selector that weighs each character, instead of each type, equally. 
+
+## Contacts
+
+- GitHub: [DaisyEverard](https://github.com/DaisyEverard)
+- LinkedIn: [daisy-everard](https://www.linkedin.com/in/daisy-everard/)
+- Email: msdeverard@gmail.com
 
 ## License
 
